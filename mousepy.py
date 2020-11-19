@@ -21,7 +21,7 @@ def getdefects(contours):
     defects = cv.convexityDefects(contours, hull)
     return defects
 
-cap = cv.VideoCapture("your_video_path") # '0' for webcam
+cap = cv.VideoCapture('0')
 while cap.isOpened():
     _, img = cap.read()
     try:
