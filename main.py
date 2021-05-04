@@ -20,7 +20,7 @@ import app
 import warnings
 warnings.filterwarnings("ignore")
 
-apps=["Desktop","Google-chrome","Org.gnome.Nautilus","vlc"]
+apps=["Desktop","Google-chrome","File Explorer","vlc"]
 with open('C:\\Users\\Rohan J Billava\\Desktop\\finalyearproject\\mousepy\\configs.json') as data_file:
 	config = json.load(data_file)
 
