@@ -20,8 +20,8 @@ import app
 import warnings
 warnings.filterwarnings("ignore")
 
-apps=["Desktop","Google-chrome","File Explorer","vlc"]
-with open('C:\\Users\\Rohan J Billava\\Desktop\\finalyearproject\\mousepy\\configs.json') as data_file:
+apps=["Desktop","Google Chrome","File Explorer","VLC media player"]
+with open('configs.json') as data_file:
 	config = json.load(data_file)
 
 label_dict = pd.read_csv(config['full_labels_csv'], header=None)
@@ -42,7 +42,7 @@ out = np.zeros(10)
 # Load model
 print('Loading model...')
 
-curr_folder = 'c:/Users/Rohan J Billava/Desktop/finalyearproject/mousepy/models_jester'
+curr_folder = 'models_jester'
 model = FullModel(batch_size=1, seq_lenght=16)
 loaded_dict = torch.load(curr_folder + '/demo.ckp')
 model.load_state_dict(loaded_dict)
@@ -117,13 +117,13 @@ while(True):
 				if str(app.get_active_window_title()) == apps[0] :
 					print("Showing open apps")	
 					hotkey('winleft')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[1] :
+				elif str(app.get_active_window_title()) == apps[1] :
 					print("Switching to tab 1")	
 					hotkey('ctrl','1')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[2] :
+				elif str(app.get_active_window_title()) == apps[2] :
 					print("Opening Chrome")	
 					hotkey('winleft','2')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[3] :
+				elif str(app.get_active_window_title()) == apps[3] :
 					print("Play / Pause")	
 					hotkey('space')
 				else:
@@ -134,13 +134,13 @@ while(True):
 				if str(app.get_active_window_title()) == apps[0] :
 					print("Opening Terminal")	
 					hotkey('winleft','1')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[1] :
+				elif str(app.get_active_window_title()) == apps[1] :
 					print("Opening new tab")	
 					hotkey('ctrl','t')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[2] :
+				elif str(app.get_active_window_title()) == apps[2] :
 					print("Taking Screenshot")	
 					hotkey('prtsc')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[3] :
+				elif str(app.get_active_window_title()) == apps[3] :
 					print("Skipping 10 seconds forward")	
 					hotkey('right')
 				else:
@@ -151,13 +151,13 @@ while(True):
 				if str(app.get_active_window_title()) == apps[0] :
 					print("Opening Nautilus")	
 					hotkey('winleft','3')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[1] :
+				elif str(app.get_active_window_title()) == apps[1] :
 					print("Closing tab")	
 					hotkey('ctrl','w')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[2] :
+				elif str(app.get_active_window_title()) == apps[2] :
 					print("Closing Nautilus")	
 					hotkey('alt','f4')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[3] :
+				elif str(app.get_active_window_title()) == apps[3] :
 					print("Rewinding 10 seconds back")	
 					hotkey('left')
 				else:
@@ -168,13 +168,13 @@ while(True):
 				if str(app.get_active_window_title()) == apps[0] :
 					print("Upper Workspace")	
 					hotkey('winleft','pgup')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[1] :
+				elif str(app.get_active_window_title()) == apps[1] :
 					print("Switching to fullscreen")	
 					hotkey('winleft','up')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[2] :
+				elif str(app.get_active_window_title()) == apps[2] :
 					print("Previous folder")	
 					hotkey('backspace')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[3] :
+				elif str(app.get_active_window_title()) == apps[3] :
 					print("Increasing volume")	
 					hotkey('up')
 				else:
@@ -185,13 +185,13 @@ while(True):
 				if str(app.get_active_window_title()) == apps[0] :
 					print("Lower Workspace")	
 					hotkey('winleft','pgdn')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[1] :
+				elif str(app.get_active_window_title()) == apps[1] :
 					print("Resizing to small window")	
 					hotkey('winleft','down')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[2] :
+				elif str(app.get_active_window_title()) == apps[2] :
 					print("Opening selected folder")	
 					hotkey('enter')
-				elif str(app.get_active_window_title().decode("utf-8")) == apps[3] :
+				elif str(app.get_active_window_title()) == apps[3] :
 					print("Decreasing volume")	
 					hotkey('down')
 				else:

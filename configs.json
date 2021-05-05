@@ -3,7 +3,7 @@
 	"full_train_data_csv": "jester-v1-train.csv",
 	"full_test_data_csv": "jester-v1-test.csv",
 	"full_validation_data_csv": "jester-v1-validation.csv",
-	"full_labels_csv": "c:/Users/Rohan J Billava/Desktop/fproj/Gesture Recognition-20210208T032343Z-001/Gesture Recognition/jester-v1-labels.csv",
+	"full_labels_csv": "jester-v1-labels.csv",
 	"labels_nv": "nvGesture/nvGesture-labels.csv",
 	"nv_train_data_folder": "nvGesture",
 	"nv_train_data_csv": "annotation_nvGesture/trainlistall.txt",

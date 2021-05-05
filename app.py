@@ -6,9 +6,17 @@
 import pyautogui
 import time
 def get_active_window_title():
-    #time.sleep(5)
-    output = pyautogui.getActiveWindow().title #subprocess.check_output(["c:/Users/Rohan J Billava/Desktop/fproj/Gesture Recognition-20210208T032343Z-001/Gesture Recognition/app.sh"])
-    return output
+    # time.sleep(5)
+    output = pyautogui.getActiveWindow().title 
+    #print(output)
+    #subprocess.check_output(["c:/Users/Rohan J Billava/Desktop/fproj/Gesture Recognition-20210208T032343Z-001/Gesture Recognition/app.sh"])
+    if len(output)==0:
+        return "Desktop"
+    elif "-" in output:
+        x=output.rfind("-")
+        return output[x+2:]
+    else:
+        return output
 #     if  "Desktop" in output:
 #         return "Desktop"
 #     else:
