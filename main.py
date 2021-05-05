@@ -21,7 +21,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 apps=["Desktop","Google-chrome","File Explorer","vlc"]
-with open('C:\\Users\\Rohan J Billava\\Desktop\\finalyearproject\\mousepy\\configs.json') as data_file:
+with open('configs.json') as data_file:
 	config = json.load(data_file)
 
 label_dict = pd.read_csv(config['full_labels_csv'], header=None)
@@ -42,7 +42,7 @@ out = np.zeros(10)
 # Load model
 print('Loading model...')
 
-curr_folder = 'c:/Users/Rohan J Billava/Desktop/finalyearproject/mousepy/models_jester'
+curr_folder = 'models_jester/'
 model = FullModel(batch_size=1, seq_lenght=16)
 loaded_dict = torch.load(curr_folder + '/demo.ckp')
 model.load_state_dict(loaded_dict)
