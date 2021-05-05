@@ -111,7 +111,7 @@ while(True):
 			print('Gesture:', ges[indices], '\t\t\t\t\t\t Value: {:.2f}'.format(value.item()))
 			cooldown = 16 
 			
-# 0-desktop/default profile, 1-chrome, 2-nautilus, 3-vlc
+# 0-desktop/default profile, 1-chrome, 2-explorer, 3-vlc
 
 			if ges[indices] == "Stop Sign" :
 				if str(app.get_active_window_title()) == apps[0] :
