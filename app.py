@@ -1,8 +1,8 @@
-import sys
-import os
-import subprocess
-import re
-import cv2
+# import sys
+# import os
+# import subprocess
+# import re
+# import cv2
 import pyautogui
 import time
 def get_active_window_title():
