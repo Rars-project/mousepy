@@ -42,7 +42,7 @@ out = np.zeros(10)
 # Load model
 print('Loading model...')
 
-curr_folder = 'models_jester/'
+curr_folder = 'models_jester'
 model = FullModel(batch_size=1, seq_lenght=16)
 loaded_dict = torch.load(curr_folder + '/demo.ckp')
 model.load_state_dict(loaded_dict)
