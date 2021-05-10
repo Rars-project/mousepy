@@ -18,6 +18,7 @@ import json
 import time
 import app
 import warnings
+import os
 warnings.filterwarnings("ignore")
 
 apps=["Desktop","Google Chrome","File Explorer","VLC media player"]
@@ -116,30 +117,31 @@ while(True):
 			if ges[indices] == "Stop Sign" :
 				if str(app.get_active_window_title()) == apps[0] :
 					print("Showing open apps")	
-					hotkey('winleft')
+					hotkey('win','tab')
 				elif str(app.get_active_window_title()) == apps[1] :
 					print("Switching to tab 1")	
 					hotkey('ctrl','1')
 				elif str(app.get_active_window_title()) == apps[2] :
 					print("Opening Chrome")	
-					hotkey('winleft','2')
+					os.system("start chrome")
 				elif str(app.get_active_window_title()) == apps[3] :
 					print("Play / Pause")	
 					hotkey('space')
 				else:
 					print("Showing open apps")	
-					hotkey('winleft')
+					hotkey('win','tab')
 					
 			elif ges[indices] == "Sliding Two Fingers Right":
 				if str(app.get_active_window_title()) == apps[0] :
 					print("Opening Terminal")	
-					hotkey('winleft','1')
+					hotkey('win','r')
+					typewrite('cmd\n')
 				elif str(app.get_active_window_title()) == apps[1] :
 					print("Opening new tab")	
 					hotkey('ctrl','t')
 				elif str(app.get_active_window_title()) == apps[2] :
 					print("Taking Screenshot")	
-					hotkey('prtsc')
+					hotkey('win','prtsc')
 				elif str(app.get_active_window_title()) == apps[3] :
 					print("Skipping 10 seconds forward")	
 					hotkey('right')
@@ -149,20 +151,20 @@ while(True):
 					
 			elif ges[indices] == "Sliding Two Fingers Left":
 				if str(app.get_active_window_title()) == apps[0] :
-					print("Opening Nautilus")	
-					hotkey('winleft','3')
+					print("Opening explorer")	
+					hotkey('winleft','e')
 				elif str(app.get_active_window_title()) == apps[1] :
 					print("Closing tab")	
 					hotkey('ctrl','w')
 				elif str(app.get_active_window_title()) == apps[2] :
-					print("Closing Nautilus")	
+					print("Closing explorer")	
 					hotkey('alt','f4')
 				elif str(app.get_active_window_title()) == apps[3] :
 					print("Rewinding 10 seconds back")	
 					hotkey('left')
 				else:
-					print("Opening Nautilus")	
-					hotkey('winleft','3')
+					print("Opening Explorer")	
+					hotkey('winleft','e')
 				
 			elif ges[indices] == "Sliding Two Fingers Up":
 				if str(app.get_active_window_title()) == apps[0] :
