@@ -15,6 +15,8 @@ def get_active_window_title():
     elif "-" in output:
         x=output.rfind("-")
         return output[x+2:]
+    elif "C:" in output:  #to extract title of file explorer
+        return "File Explorer"
     else:
         return output
 #     if  "Desktop" in output:

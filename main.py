@@ -229,9 +229,9 @@ while(True):
 		ax.clear()
 		df.plot.line(legend=False, figsize=(16,6),ax=ax, ylim=(0,1))
 		if setup:
-			plt.show(block = False)
+			# plt.show(block = False)
 			setup=False
-		plt.draw()
+		# plt.draw()
 
 	n += 1
 	bg = np.full((480, 1200, 3), 15, np.uint8)
