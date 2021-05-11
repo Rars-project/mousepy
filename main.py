@@ -1,14 +1,13 @@
 from __future__ import print_function
 from pyautogui import press, typewrite, hotkey
-from collections import OrderedDict
+# from collections import OrderedDict
 import cv2
 import pandas as pd
 import numpy as np
-import pickle
+# import pickle
 from PIL import Image
-from time import time
 import torch
-from torch.autograd import Variable
+# from torch.autograd import Variable
 from torchvision.transforms import *
 from DemoModel import FullModel
 from torch import nn
@@ -64,8 +63,8 @@ n = 0
 hist = []
 mean_hist = []
 setup = True
-plt.ion()
-fig, ax = plt.subplots()
+# plt.ion()
+# fig, ax = plt.subplots()
 cooldown = 0
 eval_samples = 2
 num_classes = 27
