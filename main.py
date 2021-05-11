@@ -26,6 +26,7 @@ with open('configs.json') as data_file:
 
 label_dict = pd.read_csv(config['full_labels_csv'], header=None)
 ges = label_dict[0].tolist()
+print(ges)
 
 # Capture video from computer camera
 cam = cv2.VideoCapture(0)
@@ -225,8 +226,8 @@ while(True):
 
 		df=pd.DataFrame(mean_hist, columns=ges)
 
-		ax.clear()
-		df.plot.line(legend=False, figsize=(16,6),ax=ax, ylim=(0,1))
+		# ax.clear()
+		# df.plot.line(legend=False, figsize=(16,6),ax=ax, ylim=(0,1))
 		if setup:
 			# plt.show(block = False)
 			setup=False
