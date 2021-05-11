@@ -38,13 +38,13 @@ value = 0
 imgs = []
 pred = 8
 top_3 = [9,8,7]
-out = np.zeros(10)
+out = np.zeros(10) # 1d array with 10 -0's
 # Load model
 print('Loading model...')
 
 curr_folder = 'models_jester'
 model = FullModel(batch_size=1, seq_lenght=16)
-loaded_dict = torch.load(curr_folder + '/demo.ckp')
+loaded_dict = torch.load(curr_folder + '/demo.ckp') #https://pytorch.org/tutorials/beginner/saving_loading_models.html#what-is-a-state-dict
 model.load_state_dict(loaded_dict)
 model = model.cuda()
 model.eval()
@@ -86,12 +86,12 @@ while(True):
 	img = transform(pre_img)
 
 	if n%4 == 0:
-		imgs.append(torch.unsqueeze(img, 0))
+		imgs.append(torch.unsqueeze(img, 0)) #reshape
 
 	# Get model output prediction
 	if len(imgs) == 16:
 		data = torch.cat(imgs).cuda()
-		output = model(data.unsqueeze(0))
+		output = model(data.unsqueeze(0))#prediction
 		out = (torch.nn.Softmax()(output).data).cpu().numpy()[0]
 		if len(hist) > 300:
 			mean_hist  = mean_hist[1:]
