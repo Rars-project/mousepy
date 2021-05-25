@@ -26,6 +26,7 @@ with open('configs.json') as data_file:
 
 label_dict = pd.read_csv(config['full_labels_csv'], header=None)
 ges = label_dict[0].tolist()
+print(ges)
 
 # Capture video from computer camera
 cam = cv2.VideoCapture(0)
@@ -146,7 +147,8 @@ while(True):
 					hotkey('right')
 				else:
 					print("Opening Terminal")	
-					hotkey('winleft','1')
+					hotkey('win','r')
+					typewrite('cmd\n')
 					
 			elif ges[indices] == "Sliding Two Fingers Left":
 				if str(app.get_active_window_title()) == apps[0] :
@@ -167,8 +169,9 @@ while(True):
 				
 			elif ges[indices] == "Sliding Two Fingers Up":
 				if str(app.get_active_window_title()) == apps[0] :
-					print("Upper Workspace")	
-					hotkey('winleft','pgup')
+					print("Virtual Keyboard")	
+					hotkey('win','r')
+					typewrite('osk\n')
 				elif str(app.get_active_window_title()) == apps[1] :
 					print("Switching to fullscreen")	
 					hotkey('winleft','up')
@@ -179,13 +182,16 @@ while(True):
 					print("Increasing volume")	
 					hotkey('up')
 				else:
-					print("Upper Workspace")	
-					hotkey('winleft','pgup')
+					print("Virtual Keyboard")	
+					hotkey('win','r')
+					typewrite('osk\n')
 					
 			elif ges[indices] == "Sliding Two Fingers Down":
 				if str(app.get_active_window_title()) == apps[0] :
-					print("Lower Workspace")	
-					hotkey('winleft','pgdn')
+					print("Opens youtube")	
+					hotkey('winleft')
+					typewrite('chrome\n','0.15')
+					typewrite('www.youtube.com\n')
 				elif str(app.get_active_window_title()) == apps[1] :
 					print("Resizing to small window")	
 					hotkey('winleft','down')
@@ -196,12 +202,14 @@ while(True):
 					print("Decreasing volume")	
 					hotkey('down')
 				else:
-					print("Lower Workspace")	
-					hotkey('winleft','pgdn')
+					print("Opens youtube")	
+					hotkey('winleft')
+					typewrite('chrome\n','0.15')
+					typewrite('www.youtube.com\n')
 				
 			elif ges[indices] == "Swiping Up":
 				print("Opening Chrome")	
-				hotkey('winleft','2')
+				os.system("start chrome")
 				
 			elif ges[indices] == "Swiping Down":
 				print("Minimize All")	
@@ -209,15 +217,15 @@ while(True):
 				
 			elif ges[indices] == "Zooming In With Full Hand":
 				print("Zoom In")	
-				hotkey('ctrl','+')
+				hotkey('winleft','+')
 				
 			elif ges[indices] == "Zooming Out With Full Hand":
 				print("Zoom Out")	
-				hotkey('ctrl','-')
+				hotkey('winleft','-')
 				
 			elif ges[indices] == "Shaking Hand":
 				print("Opening Resource Monitor...")
-				hotkey('winleft','4')
+				hotkey('ctrl','shift','esc')
 			print("")
 		
 		pred = indices
@@ -225,8 +233,8 @@ while(True):
 
 		df=pd.DataFrame(mean_hist, columns=ges)
 
-		ax.clear()
-		df.plot.line(legend=False, figsize=(16,6),ax=ax, ylim=(0,1))
+		# ax.clear()
+		# df.plot.line(legend=False, figsize=(16,6),ax=ax, ylim=(0,1))
 		if setup:
 			# plt.show(block = False)
 			setup=False
