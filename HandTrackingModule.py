@@ -13,7 +13,7 @@ class handDetector():
 
         self.mpHands = mp.solutions.hands
         self.hands = self.mpHands.Hands(self.mode, self.maxHands,
-        self.detectionCon, self.trackCon)
+                                        self.detectionCon, self.trackCon)
         self.mpDraw = mp.solutions.drawing_utils
         self.tipIds = [4, 8, 12, 16, 20]
 
@@ -26,7 +26,7 @@ class handDetector():
             for handLms in self.results.multi_hand_landmarks:
                 if draw:
                     self.mpDraw.draw_landmarks(img, handLms,
-                                                 self.mpHands.HAND_CONNECTIONS)
+                                               self.mpHands.HAND_CONNECTIONS)
 
         return img
 
@@ -53,7 +53,8 @@ class handDetector():
             bbox = xmin, ymin, xmax, ymax
 
             if draw:
-                cv2.rectangle(img, (xmin - 20, ymin - 20),(xmax + 20, ymax + 20),(0, 255, 0), 2)
+                cv2.rectangle(img, (xmin - 20, ymin - 20),(xmax + 20, ymax + 20),
+                              (0, 255, 0), 2)
 
         return self.lmList, bbox
 
@@ -107,8 +108,7 @@ def main():
         fps = 1 / (cTime - pTime)
         pTime = cTime
 
-        cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_PLAIN, 3,
-                             (255, 0, 255), 3)
+        cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_PLAIN, 3,(255, 0, 255), 3)
 
         cv2.imshow("Image", img)
         cv2.waitKey(1)
