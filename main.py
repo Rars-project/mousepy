@@ -113,7 +113,7 @@ while(True):
 			cooldown = 16 
 			
 # 0-desktop/default profile, 1-chrome, 2-nautilus, 3-vlc
-
+			
 			if ges[indices] == "Stop Sign" :
 				if str(app.get_active_window_title()) == apps[0] :
 					print("Showing open apps")	
