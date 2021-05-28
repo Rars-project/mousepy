@@ -7,11 +7,7 @@ import autopy
 
 ##########################
 wCam, hCam = 640, 480
-<<<<<<< HEAD
-frameR = 100 # Frame Reduction
-=======
-frameR=100  # Frame Reduction
->>>>>>> d4a94375a3cceb6f33b6fc14da81436af2bdc85e
+frameR=100 # Frame Reduction
 smoothening = 7
 ########################
 
@@ -53,7 +49,7 @@ while True:
                 clocY = plocY + (y3 - plocY) / smoothening
 
                 # 7. Move Mouse
-                autopy.mouse.move(wScr - clocX, clocY)
+                autopy.mouse.move(wScr-clocX, clocY)
                 cv2.circle(img, (x1, y1), 15, (255, 0, 255), cv2.FILLED)
                 plocX, plocY = clocX, clocY
 
