@@ -21,7 +21,7 @@ cap.set(4, hCam)
 
 detector = htm.handDetector(maxHands=1)
 wScr, hScr = autopy.screen.size()
-print(wScr, hScr)
+# print(wScr, hScr)
 
 while True:
         # 1. Find hand Landmarks
