@@ -5,6 +5,10 @@
 		},
 		{
 			"path": "."
+		},
+		{
+			"name": "control-mouse-gui",
+			"path": "..\\..\\finalUI\\control-mouse-gui"
 		}
 	],
 	"settings": {
