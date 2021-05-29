@@ -7,7 +7,7 @@ import autopy
 
 ##########################
 wCam, hCam = 640, 480
-frameR=100 # Frame Reduction
+frameR=150 # Frame Reduction
 smoothening = 7
 ########################
 
@@ -72,7 +72,8 @@ while True:
                         (255, 0, 0), 3)
             # 12. Display
             cv2.imshow("Image", img)
-            cv2.waitKey(1)
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
 
 	#     if cv2.waitKey(1) and 0xFF == ord('q'):
     #         break
