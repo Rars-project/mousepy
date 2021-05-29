@@ -18,7 +18,6 @@ import time
 import app
 import warnings
 import os
-import handtrackdemo as hand
 warnings.filterwarnings("ignore")
 
 apps=["Desktop","Google Chrome","File Explorer","VLC media player"]
@@ -33,7 +32,6 @@ print(ges)
 cam = cv2.VideoCapture(0)
 #cam.set(cv2.CAP_PROP_FPS, 48)
 cam.set(cv2.CAP_PROP_FPS, 60)
-cam1=cam
 
 # Set up some storage variables
 seq_len = 16
@@ -74,9 +72,17 @@ num_classes = 27
 
 score_energy = torch.zeros((eval_samples, num_classes))
 
+#resize tracking
+wCam, hCam = 640, 480
+cam.set(3, wCam)
+cam.set(4, hCam)
+smooth=7
+flag=False
 while(True):
 	# Capture frame-by-frame
 	ret, frame = cam.read()
+	ret1=ret
+	frame1=frame
 	#print(np.shape(frame)) # (480, 640, 3)
 	# Set up input for model
 	resized_frame = cv2.resize(frame, (160, 120))
@@ -116,9 +122,10 @@ while(True):
 			
 # 0-desktop/default profile, 1-chrome, 2-nautilus, 3-vlc
 			if ges[indices] == "Thumb Up" :
-				hand.track(cam1,7)
-				continue
-			
+				flag=not flag
+
+			elif flag:
+				app.track(ret1, frame1,wCam, hCam,smooth)		
 			elif ges[indices] == "Stop Sign" :
 				if str(app.get_active_window_title()) == apps[0] :
 					print("Showing open apps")	
