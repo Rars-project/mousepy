@@ -22,7 +22,7 @@ import os
 warnings.filterwarnings("ignore")
 
 apps=["Desktop","Google Chrome","File Explorer","VLC media player"]
-with open('configs.json') as data_file:
+with open('C:/Users/Rohan J Billava/Desktop/finalyearproject/mousepy/configs.json') as data_file:
     config = json.load(data_file)
 
 label_dict = pd.read_csv(config['full_labels_csv'], header=None)
