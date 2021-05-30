@@ -74,16 +74,16 @@ def gmouse():
     score_energy = torch.zeros((eval_samples, num_classes))
 
     #resize tracking
-    wCam, hCam = 640, 480
-    cam.set(3, wCam)
-    cam.set(4, hCam)
-    smooth=7
-    flag=False
+    # wCam, hCam = 640, 480
+    # cam.set(3, wCam)
+    # cam.set(4, hCam)
+    # smooth=7
+    # flag=False
     while(True):
         # Capture frame-by-frame
         ret, frame = cam.read()
-        ret1=ret
-        frame1=frame
+        # ret1=ret
+        # frame1=frame
         #print(np.shape(frame)) # (480, 640, 3)
         # Set up input for model
         resized_frame = cv2.resize(frame, (160, 120))
@@ -119,15 +119,8 @@ def gmouse():
                 cooldown = cooldown - 1
             if value.item() > 0.4 and indices < 25 and cooldown == 0: 
                 print('Gesture:', ges[indices], '\t\t\t\t\t\t Value: {:.2f}'.format(value.item()))
-                cooldown = 16 
-                
-    # 0-desktop/default profile, 1-chrome, 2-nautilus, 3-vlc
-                if ges[indices] == "Thumb Up" :
-                    flag=not flag
-
-                elif flag:
-                    app.track(ret1, frame1,wCam, hCam,smooth)		
-                elif ges[indices] == "Stop Sign" :
+                cooldown = 16 	
+                if ges[indices] == "Stop Sign" :
                     if str(app.get_active_window_title()) == apps[0] :
                         print("Showing open apps")	
                         hotkey('win','tab')
@@ -249,7 +242,7 @@ def gmouse():
             # ax.clear()
             # df.plot.line(legend=False, figsize=(16,6),ax=ax, ylim=(0,1))
             if setup:
-                # plt.show(block = False)
+            #     # plt.show(block = False)
                 setup=False
             # plt.draw()
 
@@ -276,3 +269,6 @@ def gmouse():
     cam.release()
     cv2.destroyAllWindows()
     return
+if __name__ == "__main__":
+    gmouse()
+    
