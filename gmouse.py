@@ -18,17 +18,16 @@ import time
 import app
 import warnings
 import os
-
-warnings.filterwarnings("ignore")
-
-apps=["Desktop","Google Chrome","File Explorer","VLC media player"]
-with open('C:/Users/Rohan J Billava/Desktop/finalyearproject/mousepy/configs.json') as data_file:
-    config = json.load(data_file)
-
-label_dict = pd.read_csv(config['full_labels_csv'], header=None)
-ges = label_dict[0].tolist()
-print(ges)
 def gmouse():
+    warnings.filterwarnings("ignore")
+
+    apps=["Desktop","Google Chrome","File Explorer","VLC media player"]
+    with open('C:/Users/Rohan J Billava/Desktop/finalyearproject/mousepy/configs.json') as data_file:
+        config = json.load(data_file)
+
+    label_dict = pd.read_csv(config['full_labels_csv'], header=None)
+    ges = label_dict[0].tolist()
+    # print(ges)
     # Capture video from computer camera
     cam = cv2.VideoCapture(0)
     #cam.set(cv2.CAP_PROP_FPS, 48)
@@ -73,17 +72,9 @@ def gmouse():
 
     score_energy = torch.zeros((eval_samples, num_classes))
 
-    #resize tracking
-    # wCam, hCam = 640, 480
-    # cam.set(3, wCam)
-    # cam.set(4, hCam)
-    # smooth=7
-    # flag=False
     while(True):
         # Capture frame-by-frame
         ret, frame = cam.read()
-        # ret1=ret
-        # frame1=frame
         #print(np.shape(frame)) # (480, 640, 3)
         # Set up input for model
         resized_frame = cv2.resize(frame, (160, 120))
@@ -241,9 +232,9 @@ def gmouse():
 
             # ax.clear()
             # df.plot.line(legend=False, figsize=(16,6),ax=ax, ylim=(0,1))
-            if setup:
+            # if setup:
             #     # plt.show(block = False)
-                setup=False
+                # setup=False
             # plt.draw()
 
         n += 1
