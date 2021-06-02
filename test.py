@@ -11,7 +11,8 @@ import os
 # hotkey('win','r')
 # typewrite('osk\n')
 # os.system("start chrome")
+# hotkey('winleft')
 hotkey('winleft')
-typewrite('chrome\n','0.15')
-typewrite('www.youtube.com\n')
+typewrite('chrome\n','0.5')
+typewrite('www.youtube.com\n','0.3')
 

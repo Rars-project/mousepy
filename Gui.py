@@ -1,12 +1,15 @@
 import cv2
 import numpy as np
-import pyautogui
+from pyautogui import hotkey
 from gmouse import gmouse
 from aimouse import aimouse
 import tkinter as tk
 # from PIL import ImageTk, Image
 import webbrowser
 from tkinter import *
+def pressq():
+    hotkey('q')
+
 def hover(button,coloronhover,coloronleave):
     button.bind("<Enter>",func=lambda e:button.config(background=coloronhover))
     button.bind("<Leave>",func=lambda e:button.config(background=coloronleave))
@@ -17,7 +20,7 @@ def callback(url):
     
 root = tk.Tk()
 root.title('TALK IS CHEAP.SHOW ME THE CODE MF')
-root.geometry("620x500+50+50")
+root.geometry("680x500+50+50")
 root.resizable(False,False)
 # root.wm_attributes('-transparentcolor',"#b3d9ff")
 
@@ -37,16 +40,16 @@ button.grid(row=2, column=0, pady=20, padx=10)
 hover(button,"grey","#ff9900")
 
 
-button = tk.Button(root,text="AI virtual mouse",fg="black", font='TkDefaultFontTkDefaultFont 12 bold', command=aimouse, height="2",width="16",bg="#ff9900",borderwidth=10)
+button = tk.Button(root,text="AI virtual mouse",fg="black", font='TkDefaultFontTkDefaultFont 12 bold', command=aimouse, height="2",width="20",bg="#ff9900",borderwidth=10)
 button.grid(row=2, column=1, pady=20)
 hover(button,"grey","#ff9900")
 
-# button = tk.Button(root,text="Draw in Air",fg="green", font='TkDefaultFont 12 bold', command=draw_in_air, height="4", width="16")
+# button = tk.Button(root,text="Stop",fg="green", font='TkDefaultFont 12 bold', command=pressq, height="1",width="10",bg="#ff9900",borderwidth=10)
 # button.grid(row=3, column=0, pady=20)
 
-button = tk.Button(root,text="Close",fg="red", font='TkDefaultFont 12 bold', command=root.quit, height="1", width="10",bg="#bfff00",borderwidth=10)
+button = tk.Button(root,text="Close",fg="black", font='TkDefaultFont 12 bold', command=root.quit, height="1", width="10",bg="#bfff00",borderwidth=10)
 button.grid(row=3, columnspan=2,pady=20)
-hover(button,"grey","#bfff00")
+hover(button,"#ff9900","#bfff00")
 
 link1 = tk.Label(root, text="How to use?", fg="blue",bg="#a6a6a6", cursor="hand2", font='TkDefaultFont 12 bold',height="2",width="10",borderwidth=10)
 link1.grid(rows=5, columnspan=2)

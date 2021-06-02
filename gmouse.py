@@ -187,8 +187,8 @@ def gmouse():
                     if str(app.get_active_window_title()) == apps[0] :
                         print("Opens youtube")	
                         hotkey('winleft')
-                        typewrite('chrome\n','0.15')
-                        typewrite('www.youtube.com\n')
+                        typewrite('chrome\n','0.5')
+                        typewrite('www.youtube.com\n','0.3')
                     elif str(app.get_active_window_title()) == apps[1] :
                         print("Resizing to small window")	
                         hotkey('winleft','down')
