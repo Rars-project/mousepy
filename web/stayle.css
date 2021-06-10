@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap");
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+}
+
+body .contained {
+  width: 100%;
+  height: 100%;
+  -ms-scroll-snap-type: both mandatory;
+      scroll-snap-type: both mandatory;
+  overflow: scroll;
+}
+
+body .contained section {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+body .contained section:nth-last-of-type(3) {
+  color: whitesmoke;
+  background: linear-gradient(-45deg, #683c2f, #661936, #092a36, #093a2e);
+  -webkit-box-shadow: 0 8px 5px 0 rgba(87, 77, 77, 0.2), 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 8px 5px 0 rgba(87, 77, 77, 0.2), 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+body .contained section:nth-last-of-type(3) .contain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .contained section:nth-last-of-type(3) .contain .title {
+  position: relative;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+body .contained section:nth-last-of-type(3) .contain .title h1:hover {
+  background: linear-gradient(-45deg, #683c2f, #661936, #092a36, #093a2e);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 2s ease infinite;
+          animation: gradient 2s ease infinite;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+body .contained section:nth-last-of-type(3) .contain .title p {
+  float: right;
+}
+
+body .contained section:nth-last-of-type(3) .contain #vector {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+}
+
+body .contained section:nth-last-of-type(2) {
+  background: linear-gradient(-45deg, #ffffff, #93c47d, #fff, #93c47d);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 10s ease;
+          animation: gradient 10s ease;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  color: #303232;
+}
+
+body .contained section:nth-last-of-type(2) h1:hover {
+  background: linear-gradient(-45deg, #ffffff, #93c47d, #fff, #93c47d);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 2s ease infinite;
+          animation: gradient 2s ease infinite;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+body .contained section:nth-last-of-type(1) {
+  background: linear-gradient(-45deg, #683c2f, #661936, #092a36, #093a2e);
+  color: whitesmoke;
+}
+
+body .contained section:nth-last-of-type(1) about-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 35%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 35%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.btn-outline-success {
+  color: #093a2e;
+}
+
+/* Tablet view */
+/* Mobile view */
+/*# sourceMappingURL=stayle.css.map */

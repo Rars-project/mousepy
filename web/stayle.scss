@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+body {
+    overflow: hidden;
+    width:100%;
+    height: 100vh;
+    margin: 0;
+  
+
+    .contained {
+        width:100%;
+        height:100%;
+        scroll-snap-type: both mandatory;
+        overflow: scroll;
+         
+        section{
+            //  display:flex;
+            // justify-content: center;
+            // align-items: center;
+            width: 100%;
+            height: 100vh;
+            scroll-snap-align: start;
+            
+            
+            &:nth-last-of-type(3){
+                // background-color: rgb(28,28,28);
+            color: whitesmoke;
+            background: linear-gradient( -45deg, #683c2f, #661936, #092a36, #093a2e);
+            box-shadow: 0 8px 5px 0 rgba(87, 77, 77, 0.2), 0 6px 5px 0 rgba(0,0,0,0.19);  
+            .contain{   
+            display: flex;
+                    .title{
+                        position: relative;
+                        // padding:25%,10% ;
+                        //  justify-content: center;
+                        // align-items: center;
+                        font-family: 'Josefin Sans', sans-serif;
+                        
+                        margin-top: 30px;
+                        margin-left:30px;
+                    
+                        
+                     h1:hover{
+                        background: linear-gradient( -45deg, #683c2f, #661936, #092a36, #093a2e);
+                        background-size: 400% 400%;
+                        animation : gradient 2s ease infinite ;
+                        transition-duration: 0.4s;
+                    }
+                    p { 
+                        //position:absolute;
+                        float: right;
+                      
+                    }
+
+            }
+            #vector{
+                position:absolute;
+                z-index: 10;
+                width:100%;
+                height: 100%;
+            }
+    }}    
+     &:nth-last-of-type(2){
+        // background: linear-gradient( -45deg, #683c2f, #661936, #092a36, #093a2e);
+
+      //  background-color: rgb(255, 255, 255);//#93c47d ; 
+      background: linear-gradient( -45deg, #ffffff, #93c47d, #fff, #93c47d);
+      background-size: 400% 400%;
+      animation : gradient 10s ease;
+      transition-duration: 0.5s;
+        color: rgb(48, 50, 50);
+        
+        h1:hover{
+                    background: linear-gradient( -45deg, #ffffff, #93c47d, #fff, #93c47d);
+                    background-size: 400% 400%;
+                    animation : gradient 2s ease infinite ;
+                    transition-duration: 0.4s;
+        }
+    } 
+    &:nth-last-of-type(1){
+        background: linear-gradient( -45deg, #683c2f, #661936, #092a36, #093a2e);
+        // background-color: rgb(28,28,28);
+        color: whitesmoke;
+        about-container{
+            display: flex;
+            
+        }
+    }
+ 
+    
+    }}
+    }
+
+// animation for gradient clolr
+@keyframes gradient {
+    0% {
+     background-position: 0% 35%;
+     }
+    50%{
+     background-position: 100% 50%;  
+     }
+    100%{
+     background-position: 0% 50%;  
+    }
+ }
+
+// bootstrap editz
+.btn-outline-success{
+    color:#093a2e
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 992px) {
+     
+}
+
+/* Tablet view */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  
+}
+
+/* Mobile view */
+
+@media (max-width: 768px){
+
+  
+}
