@@ -96,16 +96,16 @@ def gmouse():
             out = (torch.nn.Softmax()(output).data).cpu().numpy()[0]
             if len(hist) > 300:
                 mean_hist  = mean_hist[1:]
-                hist  = hist[1:]
-            out[-2:] = [0,0]
+                hist  = hist[1:] # deleting 0th element
+            out[-2:] = [0,0] # replacing last but 2nd element with 0 0
             hist.append(out)
-            score_energy = torch.tensor(hist[-eval_samples:])
+            score_energy = torch.tensor(hist[-eval_samples:])#last 2 elements from hist to 2d (array) tenser
             curr_mean = torch.mean(score_energy, dim=0)
             mean_hist.append(curr_mean.cpu().numpy())
             #value, indice = torch.topk(torch.from_numpy(out), k=1)
-            value, indice = torch.topk(curr_mean, k=1)
-            indices = np.argmax(out)
-            top_3 = out.argsort()[-3:]
+            value, indice = torch.topk(curr_mean, k=1)#vaues equal to 1 or greater will be stored in value and index are stored in indice
+            indices = np.argmax(out) #returns largest value index back
+            top_3 = out.argsort()[-3:]# top 3 values are stored 
             if cooldown > 0:
                 cooldown = cooldown - 1
             if value.item() > 0.4 and indices < 25 and cooldown == 0: 
@@ -248,11 +248,11 @@ def gmouse():
         if value > 0.4:
             cv2.putText(bg, ges[pred],(40,40), font, 1,(0,0,0),2)
         cv2.rectangle(bg,(128,48),(640-128,480-48),(0,255,0),3)
-        for i, top in enumerate(top_3):
+        for i, top in enumerate(top_3):#progress bar logic
             cv2.putText(bg, ges[top],(700,200-70*i), font, 1,(255,255,255),1)
             cv2.rectangle(bg,(700,225-70*i),(int(700+out[top]*170),205-70*i),(255,255,255),3)
         
-        cv2.imshow('preview',bg)
+        cv2.imshow('Gmouse',bg)
         
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
