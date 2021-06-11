@@ -26,7 +26,7 @@ class Ui_ProjectUI(object):
         font.setWeight(75)
         self.label.setFont(font)
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("C:\\Users\\Rohan J Billava\\Desktop\\finalyearproject\\../myjarvis/images/JxUA.gif"))
+        self.label.setPixmap(QtGui.QPixmap("images/JxUA.gif"))
         self.label.setScaledContents(True)
         self.label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label.setWordWrap(False)
