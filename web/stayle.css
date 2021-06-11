@@ -23,8 +23,11 @@ body .contained section {
 body .contained section:nth-last-of-type(3) {
   color: whitesmoke;
   background: linear-gradient(-45deg, #683c2f, #661936, #092a36, #093a2e);
-  -webkit-box-shadow: 0 8px 5px 0 rgba(87, 77, 77, 0.2), 0 6px 5px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 8px 5px 0 rgba(87, 77, 77, 0.2), 0 6px 5px 0 rgba(0, 0, 0, 0.19);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 20s ease infinite;
+          animation: gradient 20s ease infinite;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 body .contained section:nth-last-of-type(3) .contain {
@@ -34,10 +37,16 @@ body .contained section:nth-last-of-type(3) .contain {
 }
 
 body .contained section:nth-last-of-type(3) .contain .title {
-  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: 'Josefin Sans', sans-serif;
   margin-top: 30px;
   margin-left: 30px;
+  padding-bottom: 30px;
 }
 
 body .contained section:nth-last-of-type(3) .contain .title h1:hover {
@@ -47,10 +56,7 @@ body .contained section:nth-last-of-type(3) .contain .title h1:hover {
           animation: gradient 2s ease infinite;
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
-}
-
-body .contained section:nth-last-of-type(3) .contain .title p {
-  float: right;
+  border-radius: 10px;
 }
 
 body .contained section:nth-last-of-type(3) .contain #vector {
@@ -63,31 +69,34 @@ body .contained section:nth-last-of-type(3) .contain #vector {
 body .contained section:nth-last-of-type(2) {
   background: linear-gradient(-45deg, #ffffff, #93c47d, #fff, #93c47d);
   background-size: 400% 400%;
-  -webkit-animation: gradient 10s ease;
-          animation: gradient 10s ease;
+  -webkit-animation: gradient 50s ease infinite;
+          animation: gradient 50s ease infinite;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
-  color: #303232;
+  color: #2f3131;
 }
 
 body .contained section:nth-last-of-type(2) h1:hover {
-  background: linear-gradient(-45deg, #ffffff, #93c47d, #fff, #93c47d);
-  background-size: 400% 400%;
-  -webkit-animation: gradient 2s ease infinite;
-          animation: gradient 2s ease infinite;
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
+  color: #31c8ff;
 }
 
 body .contained section:nth-last-of-type(1) {
-  background: linear-gradient(-45deg, #683c2f, #661936, #092a36, #093a2e);
+  background-color: #1c1c1c;
   color: whitesmoke;
 }
 
-body .contained section:nth-last-of-type(1) about-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+body .contained section:nth-last-of-type(1) .about-container {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+body .contained section:nth-last-of-type(1) .about-container .col-sm-6 {
+  padding-top: 20px;
+}
+
+body .contained section:nth-last-of-type(1) .about-container .col-sm-6 .card {
+  background-image: url("images/59764-airbox-favicon.gif");
 }
 
 @-webkit-keyframes gradient {

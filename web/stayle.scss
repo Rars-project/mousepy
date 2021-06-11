@@ -25,31 +25,30 @@ body {
                 // background-color: rgb(28,28,28);
             color: whitesmoke;
             background: linear-gradient( -45deg, #683c2f, #661936, #092a36, #093a2e);
-            box-shadow: 0 8px 5px 0 rgba(87, 77, 77, 0.2), 0 6px 5px 0 rgba(0,0,0,0.19);  
+            background-size: 400% 400%;
+            animation : gradient 20s ease infinite ;
+            transition-duration: 0.4s;
             .contain{   
             display: flex;
                     .title{
-                        position: relative;
-                        // padding:25%,10% ;
-                        //  justify-content: center;
-                        // align-items: center;
+                 
+                        justify-content: center;
+                        align-items: center;
                         font-family: 'Josefin Sans', sans-serif;
                         
                         margin-top: 30px;
-                        margin-left:30px;
-                    
+                        margin-left: 30px;
+                        padding-bottom: 30px;
                         
                      h1:hover{
                         background: linear-gradient( -45deg, #683c2f, #661936, #092a36, #093a2e);
                         background-size: 400% 400%;
                         animation : gradient 2s ease infinite ;
                         transition-duration: 0.4s;
+                        border-radius: 10px;
+                        
                     }
-                    p { 
-                        //position:absolute;
-                        float: right;
-                      
-                    }
+                  
 
             }
             #vector{
@@ -61,33 +60,44 @@ body {
     }}    
      &:nth-last-of-type(2){
         // background: linear-gradient( -45deg, #683c2f, #661936, #092a36, #093a2e);
-
       //  background-color: rgb(255, 255, 255);//#93c47d ; 
       background: linear-gradient( -45deg, #ffffff, #93c47d, #fff, #93c47d);
       background-size: 400% 400%;
-      animation : gradient 10s ease;
+      animation : gradient 50s ease infinite;
       transition-duration: 0.5s;
-        color: rgb(48, 50, 50);
+        color: hsl(180, 2%, 19%);
         
         h1:hover{
-                    background: linear-gradient( -45deg, #ffffff, #93c47d, #fff, #93c47d);
-                    background-size: 400% 400%;
-                    animation : gradient 2s ease infinite ;
-                    transition-duration: 0.4s;
+            color:#31c8ff;
         }
     } 
     &:nth-last-of-type(1){
-        background: linear-gradient( -45deg, #683c2f, #661936, #092a36, #093a2e);
-        // background-color: rgb(28,28,28);
+       // background: linear-gradient( -45deg, #faf5f4, #535353, #31c8ff, #fafdfc);
+        background-color: rgb(28,28,28);
         color: whitesmoke;
-        about-container{
-            display: flex;
+        .about-container{
+          padding-left: 30px;
+          padding-right: 30px;
+          padding-bottom: 30px;
+        .col-sm-6{
+            padding-top: 20px;
+            .card {
+                // background-color: rgb(48,48,48);
+                
+                background-image: url('images/59764-airbox-favicon.gif');
+            }
+        }
+         
+        
+
+
             
         }
     }
  
     
-    }}
+    }
+    }
     }
 
 // animation for gradient clolr
@@ -133,7 +143,7 @@ body {
   
 }
 
-/* Mobile view */
+/* Mobile view */ 
 
 @media (max-width: 768px){
 
