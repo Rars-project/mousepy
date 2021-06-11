@@ -3,6 +3,7 @@ import numpy as np
 import HandTrackingModule as htm
 import time
 import autopy
+import pyautogui as pg
 def aimouse():
     ##########################
     wCam, hCam = 640, 480
@@ -39,7 +40,7 @@ def aimouse():
             cv2.rectangle(img, (frameR, frameR), (wCam - frameR, hCam - frameR),
                         (255, 0, 255), 2)
             # 4. Only Index Finger : Moving Mode
-            if fingers[1] == 1 and fingers[2] == 0:
+            if fingers[1] == 1 and fingers[2] == 0 and fingers[3] ==0 and fingers[4] == 0 and fingers[0] ==0:######changes#######
                 # 5. Convert Coordinates
                 x3 = np.interp(x1, (frameR, wCam - frameR), (0, wScr))
                 y3 = np.interp(y1, (frameR, hCam - frameR), (0, hScr))
@@ -52,7 +53,7 @@ def aimouse():
                 plocX, plocY = clocX, clocY
 
             # 8. Both Index and middle fingers are up : Clicking Mode
-            if fingers[1] == 1 and fingers[2] == 1:
+            if fingers[1] == 1 and fingers[2] == 1 and fingers[3] ==0 and fingers[4] ==0 and fingers[0] ==0:############changes
                 # 9. Find distance between fingers
                 length, img, lineInfo = detector.findDistance(8, 12, img)
                 print(length)
@@ -61,6 +62,27 @@ def aimouse():
                     cv2.circle(img, (lineInfo[4], lineInfo[5]),
                             15, (0, 255, 0), cv2.FILLED)
                     autopy.mouse.click()
+            ####################### THIS IS FOR RIGHTCLICKING #####################
+            if fingers[1] == 1 and fingers[2] == 1 and fingers[3] == 1 and fingers[4] == 0 and fingers[0] ==0:#############changes
+                length1,img1,lineInfo = detector.findDistance(8, 12,img)############changes
+                length2,img2,lineInfo = detector.findDistance(12,16,img)############changes
+                if length1<40 and length2<40:############changes
+                    pg.rightClick()#############changes
+
+            #######################THIS IS FOR SCROLLING #################
+            # if fingers[0]== 1 and fingers[1] == 1 and fingers[2] == 0 and fingers[3]== 0 and fingers[4] == 0:############changes
+            #     length1,img1,lineInfo = detector.findDistance(4, 8,img)############changes
+            #     # length2,img2,lineInfo = detector.findDistance(8,12,img)############changes
+            #     # length3,img3,lineInfo = detector.findDistance(12, 16,img)############changes
+            #     # length4,img4,lineInfo = detector.findDistance(16,20,img)############changes
+            #     if length1>180:
+            #         print(length1)
+            #         print("scrollinggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg")
+            #         pg.scroll(-1.5)########changes
+
+            # if fingers[0]== 0 and fingers[1] == 1 and fingers[2] == 1 and fingers[3]== 1 and fingers[4] == 1:############changes
+            #     pg.scroll(2)########changes
+
 
         # 11. Frame Rate
         cTime = time.time()
