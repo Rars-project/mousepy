@@ -42,5 +42,6 @@ class Window(QMainWindow, Ui_ProjectUI):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     win = Window()
+    win.setWindowTitle("Mousepy")
     win.show()
     sys.exit(app.exec())
