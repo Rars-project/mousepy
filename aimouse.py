@@ -7,7 +7,7 @@ def aimouse():
     ##########################
     wCam, hCam = 640, 480
     frameR=150 # Frame Reduction
-    smoothening = 7
+    smoothening = 10
     ########################
 
     pTime = 0
