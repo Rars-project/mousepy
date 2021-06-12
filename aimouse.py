@@ -70,8 +70,8 @@ def aimouse():
                     pg.rightClick()#############changes
 
             #######################THIS IS FOR SCROLLING #################
-            # if fingers[0]== 1 and fingers[1] == 1 and fingers[2] == 0 and fingers[3]== 0 and fingers[4] == 0:############changes
-            #     length1,img1,lineInfo = detector.findDistance(4, 8,img)############changes
+            if fingers[0]== 1 and fingers[1] == 1 and fingers[2] == 0 and fingers[3]== 0 and fingers[4] == 0:############changes
+                length5,img1,lineInfo = detector.findDistance(4, 8,img)############changes
             #     # length2,img2,lineInfo = detector.findDistance(8,12,img)############changes
             #     # length3,img3,lineInfo = detector.findDistance(12, 16,img)############changes
             #     # length4,img4,lineInfo = detector.findDistance(16,20,img)############changes
@@ -79,8 +79,20 @@ def aimouse():
             #         print(length1)
             #         print("scrollinggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg")
             #         pg.scroll(-1.5)########changes
+                try:
+                    if length5>150:
+                        pg.scroll(-20)
+                    
+                except:
+                    print("scroll failed")
 
-            # if fingers[0]== 0 and fingers[1] == 1 and fingers[2] == 1 and fingers[3]== 1 and fingers[4] == 1:############changes
+            ##########################################BACKSCROLL####################################
+            if fingers[0]== 0 and fingers[1] == 1 and fingers[2] == 1 and fingers[3]== 1 and fingers[4] == 1:############changes
+                try:
+                    pg.scroll(20)
+
+                except:
+                    print("back scroll failed")
             #     pg.scroll(2)########changes
 
 
