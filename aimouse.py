@@ -16,7 +16,7 @@ def aimouse():
     clocX, clocY = 0, 0
 
     cap = cv2.VideoCapture(0)
-    cap.set(3, wCam)
+    cap.set(3, wCam)###configuring the camera
     cap.set(4, hCam)
 
     detector = htm.handDetector(maxHands=1)
@@ -87,9 +87,11 @@ def aimouse():
                     print("scroll failed")
 
             ##########################################BACKSCROLL####################################
-            if fingers[0]== 0 and fingers[1] == 1 and fingers[2] == 1 and fingers[3]== 1 and fingers[4] == 1:############changes
+            if fingers[0]== 1 and fingers[1] == 1 and fingers[2] == 0 and fingers[3]== 0 and fingers[4] == 0:############changes
+                length6,img2,lineInfo = detector.findDistance(4, 8,img)
                 try:
-                    pg.scroll(20)
+                    if length6<40:
+                        pg.scroll(20)
 
                 except:
                     print("back scroll failed")
