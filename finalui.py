@@ -123,7 +123,7 @@ class Ui_ProjectUI(object):
         ProjectUI.setWindowTitle(_translate("ProjectUI", "MainWindow"))
         self.label_2.setText(_translate("ProjectUI", "WELCOME"))
         self.pushButton.setText(_translate("ProjectUI", "GESTURE BASED INTERACTION"))
-        self.pushButton_2.setText(_translate("ProjectUI", "AI VIRTUAL MOUSE"))
+        self.pushButton_2.setText(_translate("ProjectUI", "VIRTUAL MOUSE"))
         self.pushButton_3.setText(_translate("ProjectUI", "STOP"))
         self.pushButton_4.setText(_translate("ProjectUI", "How To Use?"))
 

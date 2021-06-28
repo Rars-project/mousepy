@@ -48,9 +48,12 @@ def aimouse():
                 clocX = plocX + (x3 - plocX) / smoothening
                 clocY = plocY + (y3 - plocY) / smoothening
                 # 7. Move Mouse
-                autopy.mouse.move(wScr - clocX, clocY)
-                cv2.circle(img, (x1, y1), 15, (255, 0, 255), cv2.FILLED)
-                plocX, plocY = clocX, clocY
+                try:
+                    autopy.mouse.move(wScr - clocX, clocY)
+                    cv2.circle(img, (x1, y1), 15, (255, 0, 255), cv2.FILLED)
+                    plocX, plocY = clocX, clocY
+                except:
+                    pass
 
             # 8. Both Index and middle fingers are up : Clicking Mode
             if fingers[1] == 1 and fingers[2] == 1 and fingers[3] ==0 and fingers[4] ==0 and fingers[0] ==0:############changes
