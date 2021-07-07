@@ -31,7 +31,7 @@ class Window(QMainWindow, Ui_ProjectUI):
         aimouse()
 
     def thirdTask(self):
-        webbrowser.open_new("about.html")
+        webbrowser.open_new("https://mousepy.netlify.app/web/index.html")
 
 
 
