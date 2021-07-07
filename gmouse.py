@@ -64,8 +64,8 @@ def gmouse():
     hist = []
     mean_hist = []
     setup = True
-    # plt.ion()
-    # fig, ax = plt.subplots()
+    plt.ion()
+    fig, ax = plt.subplots()
     cooldown = 0
     eval_samples = 2
     num_classes = 27
@@ -230,12 +230,12 @@ def gmouse():
 
             df=pd.DataFrame(mean_hist, columns=ges)
 
-            # ax.clear()
-            # df.plot.line(legend=False, figsize=(16,6),ax=ax, ylim=(0,1))
-            # if setup:
-            #     # plt.show(block = False)
-                # setup=False
-            # plt.draw()
+            ax.clear()
+            df.plot.line(legend=False, figsize=(16,6),ax=ax, ylim=(0,1))
+            if setup:
+                plt.show(block = False)
+                setup=False
+            plt.draw()
 
         n += 1
         bg = np.full((480, 1200, 3), 15, np.uint8)
